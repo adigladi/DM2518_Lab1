@@ -38,14 +38,21 @@ function initMap() {
     newMarker(startLocation);
 }
 
-function newMarker(location){
+function newMarker(location, mIcon){
     marker = new google.maps.Marker({
         position: location,
         map: map,
-        animation: google.maps.Animation.DROP
+        animation: google.maps.Animation.DROP,
+        icon: icons.mIcon
       });
     marker.addListener('click', toggleBounce);
 }
+
+var icons = {
+    myPos: {
+      icon: 'images/dot.png'
+    }
+  };
 
 function toggleBounce(){
     if (marker.getAnimation() !== null) {
@@ -60,7 +67,7 @@ roadmap.onclick = function(){map.setMapTypeId('roadmap')};
 satellite.onclick = function(){map.setMapTypeId('hybrid')};
 plus.onclick = function(){map.setZoom(map.zoom += 1)};
 minus.onclick = function(){map.setZoom(map.zoom -= 1)};
-dHuset.onclick = function(){map.setCenter({lat: 59.3469488, lng: 18.0731284}); newMarker({lat: 59.3469488, lng: 18.0731284})};
-qHuset.onclick = function(){map.setCenter({lat: 59.3499945, lng: 18.0662154}); newMarker({lat: 59.3499945, lng: 18.0662154})};
-myLoc.onclick = function(){map.setCenter(myLocation); newMarker(myLocation)};
+dHuset.onclick = function(){map.setCenter({lat: 59.3469488, lng: 18.0731284}); newMarker({lat: 59.3469488, lng: 18.0731284}, icon)};
+qHuset.onclick = function(){map.setCenter({lat: 59.3499945, lng: 18.0662154}); newMarker({lat: 59.3499945, lng: 18.0662154}, icon)};
+myLoc.onclick = function(){map.setCenter(myLocation); newMarker(myLocation), myPos};
 addLoc.onclick = function(){newMarker(map.getCenter())};
