@@ -29,7 +29,7 @@ var options = {
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: startLocation,
+        center: myLocation,
         zoom: 16,
         mapTypeId: 'roadmap',
         disableDefaultUI: true
