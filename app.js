@@ -43,7 +43,7 @@ function newMarker(location, mIcon){
         position: location,
         map: map,
         animation: google.maps.Animation.DROP,
-        icon: icons.mIcon
+        icon: icons.mIcon.icon
       });
     marker.addListener('click', toggleBounce);
 }
