@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta charset="utf-8">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" sizes="512x512" href="images/maps.png">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+  </head>
+  <body>
+    <div id="main">
+      <div id="map"></div>
+      <div id="btn">
+        <button id="roadmap" class="btn">Roadmap</button>
+        <button id="satellite" class="btn">Sattelite</button>
+      </div>
+      <div id="btn-zoom">
+          <button id="plus" class="btn">+</button>
+          <button id="minus" class="btn">-</button>
+      </div>
+      <div id="btn-info">
+          <button id="D-huset" class="btn">D-Huset</button>
+          <button id="Q-huset" class="btn">Q-Huset</button>
+          <button id="Open" class="btn">Open</button>
+          <button id="addLoc" class="btn">Add Location</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQpSKAs3CaBFemG-xQKBwNNP9tSXuxG18&callback=initMap"
+    async defer></script>
+  </body>
+</html>

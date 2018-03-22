@@ -1,0 +1,50 @@
+#main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+#map {
+  height: 100%;
+}
+
+#btn {
+  position: absolute;
+  top: 3%;
+  left: 2%;
+}
+
+#btn-zoom {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  display: inline-block;
+}
+
+#btn-info {
+  position: absolute;
+  bottom: 5%;
+  left: 2%;
+}
+
+#btn-zoom .btn {
+  display: block;
+  text-align: center;
+}
+
+.btn {
+  background-color: rgb(60, 60, 60);
+  color: white;
+  font-size: 12px;
+  padding: 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 2px;
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
