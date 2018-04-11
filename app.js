@@ -68,5 +68,5 @@ plus.onclick = function(){map.setZoom(map.zoom += 1)};
 minus.onclick = function(){map.setZoom(map.zoom -= 1)};
 dHuset.onclick = function(){map.setCenter({lat: 59.3469488, lng: 18.0731284}); newMarker({lat: 59.3469488, lng: 18.0731284})};
 qHuset.onclick = function(){map.setCenter({lat: 59.3499945, lng: 18.0662154}); newMarker({lat: 59.3499945, lng: 18.0662154})};
-myLoc.onclick = function(){map.setCenter(myLocation); newMarker(myLocation), blueDot};
+myLoc.onclick = function(){map.setCenter(myLocation); newMarker(myLocation, true, blueDot)};
 addLoc.onclick = function(){newMarker(map.getCenter(), true)};
