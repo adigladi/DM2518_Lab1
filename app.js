@@ -38,15 +38,21 @@ function initMap() {
     newMarker(startLocation);
 }
 
-function newMarker(location, mIcon){
+function newMarker(location, drag = false, mIcon){
     marker = new google.maps.Marker({
         position: location,
         map: map,
         animation: google.maps.Animation.DROP,
-        icon: mIcon
+        icon: mIcon,
+        draggable: drag
       });
     marker.addListener('click', toggleBounce);
 }
+
+var blueDot = {
+    url: "images/dot.png", // url
+    scaledSize: new google.maps.Size(50, 50)
+};
 
 function toggleBounce(){
     if (marker.getAnimation() !== null) {
@@ -63,5 +69,5 @@ plus.onclick = function(){map.setZoom(map.zoom += 1)};
 minus.onclick = function(){map.setZoom(map.zoom -= 1)};
 dHuset.onclick = function(){map.setCenter({lat: 59.3469488, lng: 18.0731284}); newMarker({lat: 59.3469488, lng: 18.0731284})};
 qHuset.onclick = function(){map.setCenter({lat: 59.3499945, lng: 18.0662154}); newMarker({lat: 59.3499945, lng: 18.0662154})};
-myLoc.onclick = function(){map.setCenter(myLocation); newMarker(myLocation), 'images/dot.png'};
-addLoc.onclick = function(){newMarker(map.getCenter(), 'images/dot.png')};
+myLoc.onclick = function(){map.setCenter(myLocation); newMarker(myLocation), blueDot};
+addLoc.onclick = function(){newMarker(map.getCenter(), true, blueDot)};
