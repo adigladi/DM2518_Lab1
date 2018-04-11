@@ -50,8 +50,7 @@ function newMarker(location, drag = false, mIcon){
 }
 
 var blueDot = {
-    url: "images/dot.png", // url
-    scaledSize: new google.maps.Size(50, 50)
+    url: "images/dot.png"
 };
 
 function toggleBounce(){
@@ -70,4 +69,4 @@ minus.onclick = function(){map.setZoom(map.zoom -= 1)};
 dHuset.onclick = function(){map.setCenter({lat: 59.3469488, lng: 18.0731284}); newMarker({lat: 59.3469488, lng: 18.0731284})};
 qHuset.onclick = function(){map.setCenter({lat: 59.3499945, lng: 18.0662154}); newMarker({lat: 59.3499945, lng: 18.0662154})};
 myLoc.onclick = function(){map.setCenter(myLocation); newMarker(myLocation), blueDot};
-addLoc.onclick = function(){newMarker(map.getCenter(), true, blueDot)};
+addLoc.onclick = function(){newMarker(map.getCenter(), true)};
