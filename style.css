@@ -27,6 +27,12 @@
   left: 2%;
 }
 
+#btn-location {
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+}
+
 #btn-zoom .btn {
   display: block;
   text-align: center;
