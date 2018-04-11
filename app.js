@@ -49,6 +49,21 @@ function newMarker(location, drag = false, mIcon){
     marker.addListener('click', toggleBounce);
 }
 
+function infoMarker(location, placeTitle = 'none', desc = 'none') {
+    infomarker = new google.maps.Marker({
+        position: location,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title: placeTitle
+    });
+    var infowindow = new google.maps.InfoWindow({
+        content: desc
+    });
+    infomarker.addListener('click', function() {
+        infowindow.open(map, infomarker);
+    });
+}
+
 var blueDot = {
     url: "images/dot.png"
 };
@@ -66,7 +81,7 @@ roadmap.onclick = function(){map.setMapTypeId('roadmap')};
 satellite.onclick = function(){map.setMapTypeId('hybrid')};
 plus.onclick = function(){map.setZoom(map.zoom += 1)};
 minus.onclick = function(){map.setZoom(map.zoom -= 1)};
-dHuset.onclick = function(){map.setCenter({lat: 59.3469488, lng: 18.0731284}); newMarker({lat: 59.3469488, lng: 18.0731284})};
-qHuset.onclick = function(){map.setCenter({lat: 59.3499945, lng: 18.0662154}); newMarker({lat: 59.3499945, lng: 18.0662154})};
+dHuset.onclick = function(){map.setCenter({lat: 59.3469488, lng: 18.0731284}); infoMarker({lat: 59.3469488, lng: 18.0731284}, 'D-huset', 'D-huset har föreläsningssalar och datorsalar och magiska underverk.')};
+qHuset.onclick = function(){map.setCenter({lat: 59.3499945, lng: 18.0662154}); infoMarker({lat: 59.3499945, lng: 18.0662154}, 'Q-huset', 'Q-huset är kallare än du förväntar dig och har en restaurang!')};
 myLoc.onclick = function(){map.setCenter(myLocation); newMarker(myLocation, blueDot)};
 addLoc.onclick = function(){newMarker(map.getCenter(), true)};
